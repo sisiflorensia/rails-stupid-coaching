@@ -1,0 +1,19 @@
+<%= render 'shared/ask_form' %>
+
+<% if @question != '' %>
+
+  <div class="row my-3 justify-content-around px-5">
+    <blockquote class="col-md-5 col-sm-12 mx-auto my-5">
+      <h3>You:</h3>
+      <h2 class="text-info"><%= @question.capitalize %></h2>
+    </blockquote>
+
+
+    <blockquote class="col-md-5 col-sm-12 mx-auto my-5 bg-info">
+      <h3 class="text-warning">Your Coach:</h3>
+      <h2 class="text-white"><%= "#{@answer[0].capitalize}#{@answer[1..-1]}" %></h2>
+    </blockquote>
+  </div>
+
+  <%= link_to "Clear the board", root_path, class: "btn btn-outline-warning"  %>
+<% end %>
